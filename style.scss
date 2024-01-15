@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Marck+Script&family=Pangolin&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: 'Kalam', cursive;
+  transition: all .5s linear;
+}
+
+$blue: #29d9d5;
+$black: #111;
+$white: #fff;
+$light-color: #aaa;
+$bg-color: #222;
+$black-bg: rgba(17, 17, 17, .7);
+$border: .2rem solid $blue;
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $black;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $blue;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+    }
+}
+
+body {
+    background: url(images/back/back8.png.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    span {
+        color: $blue;
+        font-size: 2rem;
+    }
+
+    h1{
+        font-size: 4rem;
+        color: $white;
+        margin-top: 0.5rem;
+    }
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: $blue;
+    border: $border;
+    cursor: pointer;
+    background: none;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+
+    &:hover {
+        color: $black;
+        background: $blue;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $bg-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 9%;
+
+    .navbar a {
+        font-size: 1.7rem;
+        color: $light-color;
+        display: inline-block;
+        margin: 0 1rem;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    .btn {
+        margin-top: 0;
+    }
+}
+
+.logo {
+
+    img{
+        height: 7rem;
+    }
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    color: $white;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Home Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Home Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.home {
+    margin: 0 auto;
+    margin-top: 9rem;
+    width: 90%;
+    min-height: 80vh;
+    background: linear-gradient($black-bg, $black-bg), url(images/back/back5.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    .content {
+        text-align: center;
+
+        span {
+            font-weight: bolder;
+            color: transparent;
+            -webkit-text-stroke: .1rem $white;
+            font-size: 6rem;
+            display: block
+        }
+
+        h3 {
+            font-size: 6vw;
+            color: $white;
+        }
+
+        p{
+            min-width: 6rem;
+            margin: 1rem auto;
+            font-size: 1.4rem;
+            color: $light-color;
+            line-height: 2;
+        }
+    }
+}
+
+.book-form {
+    width: 80%;
+    margin: 1rem auto;
+    margin-top: -5rem;
+    background: $bg-color;
+    box-shadow: 0 .5rem 1rem rgba(17, 17, 17, .3);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .input-box {
+            flex: 1 1 25rem;
+
+            span {
+                font-size: 1.4rem;
+                color: $light-color;
+            }
+
+            input {
+                width: 100%;
+                padding: 1.2rem 1.4rem;
+                border: $border;
+                font-size: 1.5rem;
+                color: $light-color;
+                background: none;
+                text-transform: none;
+                margin-top: 1rem;
+                border-radius: 5rem;
+                -webkit-border-radius: 5rem;
+                -moz-border-radius: 5rem;
+                -ms-border-radius: 5rem;
+                -o-border-radius: 5rem;
+            } 
+        }
+
+        .btn {
+            flex: 1 1 15rem;
+            margin-top: 2.3rem;
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    About Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    About Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+
+    .video-container {
+        flex: 1 1 42rem;
+
+        video {
+            width: 100%;
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+        }
+
+        .controls {
+            text-align: center;
+            padding: 2rem 0;
+
+            span {
+                display: inline-block;
+                height: 2rem;
+                width: 2rem;
+                background: $white;
+                margin: .7rem;
+                cursor: pointer;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+
+                &:hover {
+                    background: $blue;
+                }
+            }
+        }
+    }
+
+    .content {
+        flex: 1 1 42rem;
+        margin-bottom: 5rem;
+
+        span{
+            color: $blue;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: $white;
+            font-size: 4rem;
+            margin-top: 0.5rem;
+        }
+
+        p {
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: $light-color;
+            line-height: 2;
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Destination Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Destination Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.destination .box-container {
+    @include grid(27rem);
+
+    .box {
+        overflow: hidden;
+        background: $bg-color;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        &:hover img {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+}
+
+        .image {
+            height: 20rem;
+            overflow: hidden;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            padding: 2rem;
+            text-align: center;
+
+            h3 {
+                font-size: 2rem;
+                color: $white;
+            }
+
+            p {
+                padding: 1rem 0;
+                font-size: 1.4rem;
+                color: $light-color;
+                line-height: 2;
+            }
+
+            a {
+                font-size: 1.7rem;
+                color: $blue;
+
+                &:hover {
+                    padding-left: 1rem;
+                }
+
+                i {
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Servives Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Servives Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.services .box-container {
+    @include grid(32rem);
+
+    .box {
+        background: $bg-color;
+        padding: 3rem 2rem;
+        text-align: center;
+        border: .2rem solid $black;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        &:hover {
+            border: $border;
+        }
+
+        i {
+            font-size: 4rem;
+            color: $blue;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: $white;
+        }
+
+        p {
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: $light-color;
+            line-height: 2;
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Gallery Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Gallery Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.gallery .box-container {
+    columns: 3 25rem;
+    column-gap: 1.5rem;
+
+    .box {
+        margin-bottom: 1rem;
+        break-inside: avoid;
+
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+        }
+
+        span {
+            font-size: 1.4rem;
+            color: $light-color;
+        }
+
+        h3 {
+            margin-top: 0.5rem;
+            font-size: 2rem;
+            color: $white;
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Blogs Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Blogs Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+
+.blogs .box-container {
+    @include grid(32rem);
+
+    .box {
+        background: $bg-color;
+        overflow: hidden;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        &:hover {
+            .images img {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+            }
+        }
+
+        .images {
+            height: 25rem;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        padding: 2rem;
+
+        .link {
+            font-size: 2rem;
+            color: $white;
+
+            &:hover {
+                color: $blue
+            }
+        }
+
+        p {
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: $light-color;
+            line-height: 2;
+        }
+
+        .icon {
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a {
+                font-size: 1.4rem;
+                color: $light-color;
+
+                &:hover {
+                    color: $blue;
+                }
+
+                i {
+                    padding-right: .5rem;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Footer Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Footer Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.footer{
+
+    .box-container {
+        @include grid(25rem);
+
+        .box {
+            padding: 1rem 0;
+
+            .logo {
+                padding-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 2.2rem;
+                color: $white;
+                padding: 1rem 0;
+            }
+
+            p {
+                font-size: 1.4rem;
+                color: $light-color;
+                padding: 1rem 0;
+                line-height: 2;
+
+                i {
+                    padding-right: .5rem;
+                    color: $blue;
+                }
+            }
+
+            .share {
+                padding-top: 1rem;
+
+                a {
+                    height: 4.5rem;
+                    width: 4.5rem;
+                    line-height: 4rem;
+                    font-size: 1.7rem;
+                    color: $blue;
+                    margin-right: 0.5rem;
+                    text-align: center;
+                    border: $border;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+
+                    &:hover {
+                        background: $blue;
+                        color: $black;
+                    }
+                }
+            }
+
+            .link {
+                font-size: 1.4rem;
+                color: $light-color;
+                padding: 1rem 0;
+                display: block;
+                
+                &:hover {
+                    color: $blue;
+
+                    i {
+                        padding-right: 2rem;
+                    }
+                }
+
+                i {
+                    padding-right: .5rem;
+                    color: $blue;
+                }
+            }
+
+            form .email {
+                width: 100%;
+                border: $border;
+                background: none;
+                font-size: 1.5rem;
+                text-transform: none;
+                color: $light-color;
+                margin-bottom: 1rem;
+                padding: 1.2rem 1.4rem;
+                border-radius: 5rem;
+                -webkit-border-radius: 5rem;
+                -moz-border-radius: 5rem;
+                -ms-border-radius: 5rem;
+                -o-border-radius: 5rem;
+            }
+        }
+    }
+}
+
+.credit {
+    background: $black-bg;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1.3rem;
+    color: $light-color;
+
+    span{
+        color: $blue;
+    }
+}
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Banner Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Banner Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+.banner {
+    background: linear-gradient($black-bg, $black-bg), url(images/event/event3.png.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 3rem 2rem;
+    text-align: center;
+
+    .content {
+
+        span {
+            font-size: 2rem;
+            color: $blue;
+        }
+
+        h3 {
+            font-size: 4rem;
+            color: $white;
+            margin-left: 1rem
+        }
+
+        p {
+            max-width: 60rem;
+            margin: 1rem auto;
+            font-size: 1.4rem;
+            color: $light-color;
+            line-height: 2;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Media Qeury    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Media Qeury    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+@media (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header{
+        
+        .navbar {
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: $bg-color;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            a {
+                margin: 2rem;
+                font-size: 2rem;
+                display: block;
+            }
+        }
+    }
+    .home {
+        margin-top: 10rem;
+
+        .content {
+
+            span {
+                font-size: 8vw;
+            }
+
+            h3 {
+                font-size: 9vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .about .content {
+        font-size: 3.5rem
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
