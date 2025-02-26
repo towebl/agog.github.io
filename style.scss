@@ -12,7 +12,7 @@
   transition: all .5s linear;
 }
 
-$blue: #29d9d5;
+$blue: #e62ee0;
 $black: #111;
 $white: #fff;
 $light-color: #aaa;
@@ -51,7 +51,7 @@ html {
 }
 
 body {
-    background: url(images/back/back8.png.png) no-repeat;
+    background: linear-gradient($black-bg, $black-bg), url(images/back/bg.png) no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -109,6 +109,7 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 9%;
+    z-index: 10000;
 
     .navbar a {
         font-size: 1.7rem;
@@ -152,7 +153,7 @@ section {
     margin-top: 9rem;
     width: 90%;
     min-height: 80vh;
-    background: linear-gradient($black-bg, $black-bg), url(images/back/back5.png) no-repeat;
+    background: linear-gradient($black-bg, $black-bg), url(images/gallery/hero1.png) no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -178,7 +179,7 @@ section {
         }
 
         h3 {
-            font-size: 6vw;
+            font-size: 3vw;
             color: $white;
         }
 
@@ -257,39 +258,16 @@ section {
     gap: 2rem;
     margin-top: 5rem;
 
-    .video-container {
+    .about-img {
         flex: 1 1 42rem;
 
-        video {
+        img {
             width: 100%;
             border-radius: 1rem;
             -webkit-border-radius: 1rem;
             -moz-border-radius: 1rem;
             -ms-border-radius: 1rem;
             -o-border-radius: 1rem;
-        }
-
-        .controls {
-            text-align: center;
-            padding: 2rem 0;
-
-            span {
-                display: inline-block;
-                height: 2rem;
-                width: 2rem;
-                background: $white;
-                margin: .7rem;
-                cursor: pointer;
-                border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-
-                &:hover {
-                    background: $blue;
-                }
-            }
         }
     }
 
@@ -473,8 +451,110 @@ section {
 
 
 
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Contact Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
 
-/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Blogs Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Contact Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
+
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    background: $bg-color;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    gap: 20px;
+    margin: 5rem 9rem;
+
+    .heading span {
+        font-size: 3rem;
+    }
+  
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+      
+      h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+  
+      p {
+        font-size: 16px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+  
+      h3 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    }
+  
+    .contact-form {
+      flex: 1;
+      min-width: 280px;
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+  
+        .form-group {
+          display: flex;
+          flex-direction: column;
+  
+          label {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+  
+          input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+  
+            &:focus {
+              outline: none;
+              border-bottom-color: #007bff;
+            }
+          }
+  
+          textarea {
+            resize: vertical;
+            min-height: 100px;
+          }
+        }
+  
+        .submit-btn {
+          padding: 12px;
+          background: white;
+          color: #1a1a50;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s;
+  
+          &:hover {
+            background: #ddd;
+          }
+        }
+      }
+    }
+  }
+
+
+
+/*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{       }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    *\
 
 /*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Blogs Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
 
@@ -677,7 +757,7 @@ section {
 /*    {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{    Banner Section    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}    */
 
 .banner {
-    background: linear-gradient($black-bg, $black-bg), url(images/event/event3.png.jpg) no-repeat;
+    background: linear-gradient($black-bg, $black-bg), url(images/event/team6.png) no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -706,42 +786,6 @@ section {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -806,6 +850,27 @@ section {
             }
         }
     }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    
+        .contact-info, .contact-form {
+          width: 100%;
+          text-align: center;
+        }
+    
+        .contact-form {
+          form {
+            .form-group {
+              input, textarea {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
 }
 
 @media (max-width: 450px) {
@@ -817,30 +882,8 @@ section {
     .about .content {
         font-size: 3.5rem
     }
+
+    .contact {
+        margin: 5rem 2rem;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
